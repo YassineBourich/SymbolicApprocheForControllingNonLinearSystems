@@ -1,0 +1,44 @@
+#pragma once
+#include "VectorMath.h"
+#include <stdlib.h>
+#include <math.h>
+#include <stdint.h>
+#include "KSI.h"
+
+struct int_vec3_bitmap {
+    uint64_t* data;
+    size_t nwords;
+    size_t n_ons;
+    const int_vec3* Nx;
+};
+
+typedef struct int_vec3_bitmap int_vec3_bitmap;
+
+#define NULL_VEC3_BITMAP (int_vec3_bitmap){NULL, 0, 0, NULL}
+
+/* Creation */
+int_vec3_bitmap bitmap_create_empty(const int_vec3* Nx);
+int_vec3_bitmap bitmap_create_from_array_vec3(int_vec3 arr[], unsigned int arr_size, const int_vec3* Nx);
+int_vec3_bitmap bitmap_clone(const int_vec3_bitmap* bitmap);
+
+/* Deletion */
+void bitmap_free(int_vec3_bitmap* bitmap);
+
+/* Queries */
+BOOL bitmap_is_empty(const int_vec3_bitmap* bitmap);
+BOOL bitmap_contains(const int_vec3_bitmap* bitmap, int_vec3 e);
+
+/* Modification */
+BOOL bitmap_add(int_vec3_bitmap* bitmap, int_vec3 e);
+BOOL bitmap_remove(int_vec3_bitmap* bitmap, int_vec3 e);
+
+/* BitSet operations */
+int_vec3_bitmap bitmap_intersection(const int_vec3_bitmap* a, const int_vec3_bitmap* b);
+
+int_vec3_bitmap bitmap_union(const int_vec3_bitmap* a, const int_vec3_bitmap* b);
+
+BOOL bitmap_equal(const int_vec3_bitmap* a, const int_vec3_bitmap* b);
+
+BOOL hyperrectangle_is_subset_of_bitmap(int_vec3_pair* r_min_max, int_vec3_bitmap* bitmap);
+
+int_vec3* bitmap_to_array(int_vec3_bitmap* bitmap);
