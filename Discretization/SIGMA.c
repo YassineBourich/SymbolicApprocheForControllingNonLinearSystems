@@ -5,7 +5,7 @@ float_vec2 p(const int_vec2* sigma,
             const float_vec2* u_min, 
             const float_vec2* u_max) {
     if (int_vec2_all_eq(sigma, &INT_VEC2_ZERO)) {
-        printf("Cannot find partition borders of (0, 0, 0)\n");
+        printf("Cannot find command of (0, 0)\n");
         return FLOAT_VEC2_ZERO;
     }
 

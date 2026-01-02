@@ -1,10 +1,6 @@
 #include "VectorMath.h"
 
 // Vector3
-int_vec3* INT_VEC3_ZERO_PTR() {
-    static int_vec3 zero = {0, 0, 0};
-    return &zero;
-}
 
 BOOL float_vec3_all_lte(const float_vec3* vect1, const float_vec3* vect2) {
     return (vect1->v1 <= vect2->v1) && (vect1->v2 <= vect2->v2) && (vect1->v3 <= vect2->v3);
@@ -23,10 +19,6 @@ BOOL int_vec3_all_eq(const int_vec3* vect1, const int_vec3* vect2) {
 }
 
 // Vector2
-int_vec2* INT_VEC2_ZERO_PTR() {
-    static float_vec2 zero = {0.0f, 0.0f};
-    return &zero;
-}
 
 BOOL float_vec2_all_lte(const float_vec2* vect1, const float_vec2* vect2) {
     return (vect1->v1 <= vect2->v1) && (vect1->v2 <= vect2->v2);
@@ -68,5 +60,5 @@ float_vec3 matrix3_vec3_mult(matrix3 M, float_vec3 v) {
 }
 
 BOOL increment_vec3(int_vec3* min_vec, int_vec3* max_vec, int_vec3 vector) {
-
+    return TRUE;
 }

@@ -10,3 +10,5 @@ extern int dim_w;
 extern float tau;
 
 float_vec3 f(float_vec3* x, float_vec2* u, float_vec3* w);
+
+typedef float_vec3 (*cont_sys)(float_vec3*, float_vec2*, float_vec3*);

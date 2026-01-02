@@ -11,7 +11,7 @@ float_vec3 f(float_vec3* x, float_vec2* u, float_vec3* w) {
 
     xtp1.v1 = x->v1 + tau * (cos(x->v3) * u->v1 + w->v1);
     xtp1.v2 = x->v2 + tau * (sin(x->v3) * u->v1 + w->v2);
-    xtp1.v3 = fmod(x->v3 + tau * (u->v2 + w->v3), 2 * PI) - PI;
+    xtp1.v3 = x->v3 + tau * (u->v2 + w->v3);
 
     return xtp1;
 }

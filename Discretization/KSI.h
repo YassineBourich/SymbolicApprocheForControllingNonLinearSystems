@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ContinuousSystem/Model_3D.h"
+#include "../ContinuousSystem/Model_3D.h"
 #include <stdio.h>
 
 int_vec3 q(const float_vec3* x, 

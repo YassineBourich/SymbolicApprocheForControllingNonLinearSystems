@@ -1,6 +1,7 @@
 #pragma once
 
 #include "boolean.h"
+#include <stdint.h>
 #define PI 3.14159265358979323846
 
 typedef struct {
@@ -65,3 +66,22 @@ float_vec3 matrix3_vec3_mult(matrix3 M, float_vec3 v);
 typedef matrix3 (*parametrized_matrix)(float_vec2);
 
 BOOL increment_vec3(int_vec3* min_vec, int_vec3* max_vec, int_vec3 vector);
+
+struct int_vec3_arr {
+    int_vec3* data;
+    size_t size;
+};
+
+typedef struct int_vec3_arr int_vec3_arr;
+
+#define NULL_INT_VEC3_ARR ((int_vec3_arr){NULL, 0})
+
+struct int_vec3_stage_arr {
+    int_vec3* data;
+    int* stages;
+    size_t size;
+};
+
+typedef struct int_vec3_stage_arr int_vec3_stage_arr;
+
+#define NULL_INT_VEC3_STAGE_ARR ((int_vec3_stage_arr){NULL, 0})

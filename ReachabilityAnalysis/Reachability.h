@@ -1,7 +1,7 @@
 #pragma once
 
-#include "VectorMath.h"
-#include "ContinuousSystem/Model_3D.h"
+#include "../VectorMath.h"
+#include "../ContinuousSystem/Model_3D.h"
 #include <stdio.h>
 
 #define MONOTONY_BASED_REACHABILITY 0

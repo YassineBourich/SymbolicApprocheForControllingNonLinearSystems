@@ -10,9 +10,9 @@ int_vec3 q(const float_vec3* x,
 
     int_vec3 r;
 
-    r.v1 = ((int) (x->v1 - x_min->v1) * Nx->v1 / (x_max->v1 - x_min->v1)) + 1;
-    r.v2 = ((int) (x->v2 - x_min->v2) * Nx->v2 / (x_max->v2 - x_min->v2)) + 1;
-    r.v3 = ((int) (x->v3 - x_min->v3) * Nx->v3 / (x_max->v3 - x_min->v3)) + 1;
+    r.v1 = (int) ((x->v1 - x_min->v1) * Nx->v1 / (x_max->v1 - x_min->v1)) + 1;
+    r.v2 = (int) ((x->v2 - x_min->v2) * Nx->v2 / (x_max->v2 - x_min->v2)) + 1;
+    r.v3 = (int) ((x->v3 - x_min->v3) * Nx->v3 / (x_max->v3 - x_min->v3)) + 1;
 
     return r;
 }
